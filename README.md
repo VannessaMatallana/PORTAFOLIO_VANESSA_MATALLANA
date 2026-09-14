@@ -1,6 +1,6 @@
 <div align="center">
 
-# ✨ DVMB-Dev | Portafolio Profesional ✨
+# DVMB-Dev | Portafolio Profesional 
 
 <p align="center">
   <strong>Deisy Vanessa Matallana Bernal</strong><br>
@@ -16,30 +16,30 @@
 
 ---
 
-### 🚀 Accesos Directos
-🌐 **[Ver Portafolio en Vivo](https://tu-enlace-de-deploy.com)** &nbsp;&nbsp;|&nbsp;&nbsp; 🎨 **[Explorar Prototipo en Figma](https://www.figma.com/design/ORs5mx5Nh2F1g5tW6cnNIm/Untitled?node-id=0-1&t=tdZlVzzpL9wX3AKj-1)**
+### Accesos Directos
+**[Ver Portafolio en Vivo](https://vannessamatallana.github.io/PORTAFOLIO_VANESSA_MATALLANA/)** &nbsp;&nbsp;|&nbsp;&nbsp; **[Explorar Prototipo en Figma](https://www.figma.com/design/ORs5mx5Nh2F1g5tW6cnNIm/Untitled?node-id=0-1&t=tdZlVzzpL9wX3AKj-1)**
 
 </div>
 
 ---
 
-## 🌟 Sobre el Proyecto
+## Sobre el Proyecto
 
 Este repositorio alberga el código fuente de mi **portafolio web personal e interactivo**, concebido no solo como una carta de presentación técnica, sino como una experiencia de usuario (UX) fluida y memorable. El proyecto integra un sistema dinámico de internacionalización para navegar en **Español, Inglés y Portugués**, un completo selector de temas (Modo Claro/Oscuro) y una estructura modular orientada al detalle visual y estético.
 
 ---
 
-## 🎨 Prototipado y Diseño Visual (Figma)
+## Prototipado y Diseño Visual (Figma)
 
 Antes de escribir la primera línea de código, cada componente, paleta de colores y transición fue planeada bajo criterios de **psicología de la percepción** y experiencia de usuario. 
 
-* 📱 **Wireframes y Mockups:** Diseñados con una escala armónica de tonos lilas, morados y transiciones espaciales.
-* 🧩 **Sistema de Diseño:** Componentes reutilizables, tipografías escalables y enfoque 100% responsivo para móviles, tablets y escritorios.
-* 🔗 **Enlace al Diseño:** Puedes inspeccionar las mesas de trabajo, flujos y maquetas originales en el **[Prototipo de Figma](https://www.figma.com/design/ORs5mx5Nh2F1g5tW6cnNIm/Untitled?node-id=0-1&t=tdZlVzzpL9wX3AKj-1)**.
+*  **Wireframes y Mockups:** Diseñados con una escala armónica de tonos lilas, morados y transiciones espaciales.
+*  **Sistema de Diseño:** Componentes reutilizables, tipografías escalables y enfoque 100% responsivo para móviles, tablets y escritorios.
+*  **Enlace al Diseño:** Puedes inspeccionar las mesas de trabajo, flujos y maquetas originales en el **[Prototipo de Figma](https://www.figma.com/design/ORs5mx5Nh2F1g5tW6cnNIm/Untitled?node-id=0-1&t=tdZlVzzpL9wX3AKj-1)**.
 
 ---
 
-## 🛠️ Stack Tecnológico
+##  Stack Tecnológico
 
 El desarrollo combina una base frontend moderna orientada al detalle visual y una arquitectura de archivos limpia y escalable:
 
@@ -53,7 +53,7 @@ El desarrollo combina una base frontend moderna orientada al detalle visual y un
 
 ---
 
-## 📂 Arquitectura del Repositorio
+##  Arquitectura del Repositorio
 
 ```text
 PORTAFOLIO_VANESSA_MATALLANA/
