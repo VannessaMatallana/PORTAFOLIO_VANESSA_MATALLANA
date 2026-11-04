@@ -7,9 +7,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-i18n="meta-title">Deisy Vanessa Matallana Bernal— Desarrolladora Full Stack &amp; Psicóloga</title>
+  <title data-i18n="meta-title">Deisy Vanessa Matallana Bernal — Desarrolladora Full Stack &amp; Psicóloga</title>
   <meta name="description"
-    content="Portafolio profesional de Vanessa Matallana, desarrolladora de software y especialista en backend con experiencia de usuario."
+    content="Portafolio profesional de Vanessa Matallana, desarrolladora de software y especialista en frontend y experiencia de usuario."
     data-i18n="meta-description" data-i18n-attr="content">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,24 +18,20 @@
     rel="stylesheet">
   <link rel="stylesheet" href="CSS/style.css">
   <script src="https://cdn.jsdelivr.net/npm/i18next@23/i18next.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@2/i18nextHttpBackend.min.js"></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@7/i18nextBrowserLanguageDetector.min.js"></script>
 </head>
 
 <body>
-  <div id="google_translate_element"></div>
   <a class="skip-link" href="#contenido" data-i18n="skip-content">Saltar al contenido</a>
 
   <header class="navbar">
-    <a href="#inicio" class="logo" aria-label="Inicio" data-i18n-attr="aria-label" data-i18n="aria-home">
-      <img src="Imagenes/LOGOvm.png" alt="Logo de Vanessa Matallana" class="logo-img" data-i18n-attr="alt"
-        data-i18n="alt-logo">
+    <a href="#inicio" class="logo" aria-label="Inicio" title="Vanessa Matallana | Psicología &amp; Código Web" data-i18n-attr="aria-label,title" data-i18n-attr-key="aria-logo-link">
+      <img src="Imagenes/LOGOvm.png" alt="Logotipo de Vanessa Matallana - Psicología y Código Web" class="logo-img" data-i18n-attr="alt"
+        data-i18n-attr-key="alt-logo">
       <span class="logo-name">DVMB-Dev</span>
     </a>
 
     <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menú"
-      data-i18n-attr="aria-label" data-i18n="aria-open-menu">
+      data-i18n-attr="aria-label" data-i18n-attr-key="aria-open-menu">
       <span></span><span></span><span></span>
     </button>
 
@@ -43,15 +39,14 @@
       <a href="#sobre-mi" data-i18n="nav-about">Sobre mí</a>
       <a href="#herramientas" data-i18n="nav-stack">Stack</a>
       <a href="#proyectos" data-i18n="nav-projects">Proyectos</a>
-      <a href="#estudios" data-i18n="nav-studies">Estudios</a>
       <a href="#curriculum" data-i18n="nav-resume">Currículum</a>
       <a href="#contacto" data-i18n="nav-contact">Contacto</a>
     </nav>
 
     <div class="nav-actions">
       <div class="dropdown-container" id="lang-dropdown-container">
-        <button class="dropdown-toggle-btn" aria-expanded="false" aria-label="Seleccionar idioma"
-          data-i18n-attr="aria-label" data-i18n="aria-select-lang">
+        <button class="dropdown-toggle-btn" aria-expanded="false" aria-label="Seleccionar idioma" title="Idioma"
+          data-i18n-attr="aria-label,title" data-i18n-attr-key="aria-lang-select">
           <svg class="flag-icon" viewBox="0 0 640 480" width="18" height="13">
             <path fill="#fcd116" d="M0 0h640v240H0z" />
             <path fill="#003893" d="M0 240h640v120H0z" />
@@ -61,8 +56,7 @@
           <span class="dropdown-arrow">▼</span>
         </button>
         <div class="dropdown-menu">
-          <button class="lang-btn active" data-lang="es" title="Español (Colombia)" data-i18n-attr="title"
-            data-i18n="title-es">
+          <button class="lang-btn active" data-lang="es" title="Español (Colombia)" data-i18n-attr="title">
             <svg class="flag-icon" viewBox="0 0 640 480" width="16" height="12">
               <path fill="#fcd116" d="M0 0h640v240H0z" />
               <path fill="#003893" d="M0 240h640v120H0z" />
@@ -70,7 +64,7 @@
             </svg>
             <span>ES</span>
           </button>
-          <button class="lang-btn" data-lang="en" title="English (USA)" data-i18n-attr="title" data-i18n="title-en">
+          <button class="lang-btn" data-lang="en" title="English (USA)" data-i18n-attr="title">
             <svg class="flag-icon" viewBox="0 0 640 480" width="16" height="12">
               <path fill="#bd3d44" d="M0 0h640v480H0z" />
               <path stroke="#fff" stroke-width="37" d="M0 55h640M0 129h640M0 203h640M0 277h640M0 351h640M0 425h640" />
@@ -78,8 +72,7 @@
             </svg>
             <span>EN</span>
           </button>
-          <button class="lang-btn" data-lang="pt" title="Português (Brasil)" data-i18n-attr="title"
-            data-i18n="title-pt">
+          <button class="lang-btn" data-lang="pt" title="Português (Brasil)" data-i18n-attr="title">
             <svg class="flag-icon" viewBox="0 0 640 480" width="16" height="12">
               <path fill="#009b3a" d="M0 0h640v480H0z" />
               <path fill="#fedf00" d="m320 40 300 200L320 440 20 240z" />
@@ -91,10 +84,14 @@
       </div>
 
       <div class="dropdown-container" id="social-dropdown-container">
-        <button class="dropdown-toggle-btn" aria-expanded="false" aria-label="Redes sociales"
-          data-i18n-attr="aria-label" data-i18n="aria-social">
-          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" />
+        <button class="dropdown-toggle-btn" aria-expanded="false" aria-label="Redes sociales" title="Redes sociales"
+          data-i18n-attr="aria-label,title" data-i18n-attr-key="aria-social">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="18" cy="5" r="3"></circle>
+            <circle cx="6" cy="12" r="3"></circle>
+            <circle cx="18" cy="19" r="3"></circle>
+            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
           </svg>
           <span class="dropdown-arrow">▼</span>
         </button>
@@ -114,7 +111,7 @@
             </svg>
             <span data-i18n="social-linkedin">LinkedIn</span>
           </a>
-          <a href="mailto:vanessa.matallana@ejemplo.com" class="dropdown-item">
+          <a href="mailto:d.vanessamatallana.b@gmail.com" class="dropdown-item">
             <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
               <path d="M22 6l-10 7L2 6" />
@@ -124,8 +121,8 @@
         </div>
       </div>
 
-      <button id="theme-toggle" aria-label="Cambiar tema" title="Cambiar tema de color"
-        data-i18n-attr="aria-label,title" data-i18n="theme-toggle-label">
+      <button id="theme-toggle" aria-label="Cambiar tema de color" title="Cambiar tema de color"
+        data-i18n-attr="aria-label,title" data-i18n-attr-key="theme-toggle-label">
         <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
           stroke-width="2">
           <path d="M21 12.8A9 9 0 1111.2 3 7 7 0 0021 12.8z" />
@@ -142,13 +139,16 @@
 
   <main id="contenido">
 
+    <!-- ==========================================
+         2. SECCIÓN DE INICIO (HERO)
+         ========================================== -->
     <section id="inicio" class="hero">
       <div class="hero-inner">
         <div class="hero-copy">
           <div class="inline-badge">
             <span data-i18n="hero-badge">Frontend Developer &amp; UI/UX Focus</span>
           </div>
-          <h1 data-i18n="hero-title"> Soy <em>Deisy Vanessa Matallana Bernal</em></h1>
+          <h1 data-i18n="hero-title">Soy <em>Deisy Vanessa Matallana Bernal</em></h1>
           <p class="hero-lede" data-i18n="hero-description">
             Diseño interfaces intuitivas, estéticas y memorables. Fusiono mi formación en psicología con el desarrollo
             frontend moderno para crear productos digitales que conectan profundamente con las personas.
@@ -157,12 +157,10 @@
             <code>class Vanessa <span style="color: var(--accent);">extends</span> FrontendDeveloper <span style="color: var(--accent);">implements</span> UserExperience { }</code>
           </div>
           <div class="hero-actions">
-            <a href="#proyectos" class="btn btn-primary"><span data-i18n="hero-btn-projects">Explorar portafolio</span>
+            <a href="#proyectos" class="btn btn-primary"><span data-i18n="hero-btn-projects">Explorar proyectos</span>
               <span>→</span></a>
-            <a href="#contacto" class="btn btn-ghost" data-i18n="hero-btn-contact">Hablemos</a>
             <a href="./CV/CV-Generation-Deisy Vanessa Matallana Bernal (1).docx.pdf" target="_blank"
-              rel="noopener noreferrer" class="btn btn-primary"><span data-i18n="hero-btn-cv">Ver CV</span>
-              <span>→</span></a>
+              rel="noopener noreferrer" class="btn btn-ghost"><span data-i18n="hero-btn-cv">Ver CV</span></a>
           </div>
         </div>
       </div>
@@ -177,12 +175,10 @@
         <div class="section-head">
           <span class="eyebrow"
             style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent); display: block; margin-bottom: 8px;"
-            data-i18n="about-eyebrow">01
-            — Identidad Visual &amp; Técnica</span>
+            data-i18n="about-eyebrow">01 — Identidad Visual &amp; Técnica</span>
           <h2
             style="font-size: clamp(2rem, 3vw, 2.8rem); font-family: var(--font-display); font-weight: 400; margin: 0;"
-            data-i18n="about-title">
-            Sobre mí</h2>
+            data-i18n="about-title">Sobre mí</h2>
         </div>
 
         <div class="about-layout-grid">
@@ -190,12 +186,12 @@
           <div class="about-orbit-wrapper">
             <div class="hero-glowing-orbit">
               <div class="hero-central-orb">
-                <img src="Imagenes/Avatar_vanessa1.png" alt="Vanessa Matallana" class="about-profile-img"
+                <img src="Imagenes/Avatar_vanessa1.png" alt="Vanessa Matallana - Perfil" class="about-profile-img"
                   data-i18n-attr="alt" data-i18n="alt-profile-img">
               </div>
-              <div class="orbit-planet p1">UI/UX</div>
-              <div class="orbit-planet p2">JS / CSS</div>
-              <div class="orbit-planet p3">Empatía</div>
+              <div class="orbit-planet p1" data-i18n="orbit-badge-1">Frontend</div>
+              <div class="orbit-planet p2" data-i18n="orbit-badge-2">UI / UX</div>
+              <div class="orbit-planet p3" data-i18n="orbit-badge-3">Código Limpio</div>
             </div>
           </div>
 
@@ -213,22 +209,19 @@
             <div class="about-grid-bottom">
               <div class="about-card-glow" onclick="openModal('modal-psico')">
                 <h3 data-i18n="card-psico-title">Psicología &amp; UX</h3>
-                <p data-i18n="card-psico-desc">Comportamiento humano aplicado al diseño de experiencias digitales
-                  fluidas...</p>
+                <p data-i18n="card-psico-desc">Comportamiento humano aplicado al diseño de experiencias digitales fluidas...</p>
                 <span class="card-hint" data-i18n="card-hint-zoom">Ampliar ↗</span>
               </div>
 
               <div class="about-card-glow featured" onclick="openModal('modal-frontend')">
-                <h3 data-i18n="card-backend-title">Frontend &amp; UI</h3>
-                <p data-i18n="card-backend-desc">Componentes estilizados, animaciones sutiles, CSS moderno y JavaScript
-                  interactivo...</p>
+                <h3 data-i18n="card-frontend-title">Frontend &amp; UI</h3>
+                <p data-i18n="card-frontend-desc">Componentes estilizados, animaciones sutiles, CSS moderno y JavaScript interactivo...</p>
                 <span class="card-hint" data-i18n="card-hint-zoom">Ampliar ↗</span>
               </div>
 
               <div class="about-card-glow" onclick="openModal('modal-backend')">
-                <h3 data-i18n="card-ui-title">Visión Integral</h3>
-                <p data-i18n="card-ui-desc">Conexión limpia con servicios backend y lógica estructurada detrás de la
-                  interfaz...</p>
+                <h3 data-i18n="card-integral-title">Visión Integral</h3>
+                <p data-i18n="card-integral-desc">Conexión limpia con servicios backend y lógica estructurada detrás de la interfaz...</p>
                 <span class="card-hint" data-i18n="card-hint-zoom">Ampliar ↗</span>
               </div>
             </div>
@@ -247,8 +240,6 @@
       </div>
     </section>
 
-
-
     <!-- ==========================================
          4. STACK TECNOLÓGICO (HERRAMIENTAS)
          ========================================== -->
@@ -256,11 +247,9 @@
       <div class="section-head">
         <span class="eyebrow"
           style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent); display: block; margin-bottom: 8px;"
-          data-i18n="tools-eyebrow">02
-          — Stack tecnológico</span>
+          data-i18n="tools-eyebrow">02 — Stack tecnológico</span>
         <h2 style="font-size: clamp(2rem, 3vw, 2.8rem); font-family: var(--font-display); font-weight: 400; margin: 0;"
-          data-i18n="tools-title">
-          Herramientas &amp; Interfaz</h2>
+          data-i18n="tools-title">Herramientas &amp; Interfaz</h2>
       </div>
 
       <div class="filter-tabs" role="tablist">
@@ -272,7 +261,7 @@
 
       <div class="tools-grid-modern">
 
-        <!-- Tarjeta 1: Frontend & UI (Ahora de primera y protagonista) -->
+        <!-- Tarjeta 1: Frontend & UI -->
         <article class="tool-glow-card featured" data-category="frontend">
           <div class="tool-header">
             <span class="tool-badge" data-i18n="badge-frontend">Frontend Core</span>
@@ -329,6 +318,7 @@
           </div>
         </article>
 
+        <!-- Tarjeta 2: Lógica & Backend -->
         <article class="tool-glow-card" data-category="backend">
           <div class="tool-header">
             <span class="tool-badge" data-i18n="badge-backend">Lógica &amp; Datos</span>
@@ -389,6 +379,7 @@
           </div>
         </article>
 
+        <!-- Tarjeta 3: Flujo & DevOps -->
         <article class="tool-glow-card" data-category="devops">
           <div class="tool-header">
             <span class="tool-badge" data-i18n="badge-devops">Control &amp; Colaboración</span>
@@ -451,265 +442,179 @@
     </section>
 
     <!-- ==========================================
-         5. PROYECTOS DESTACADOS
+         5. PROYECTOS DESTACADOS (CARDS MODERNAS)
          ========================================== -->
     <section id="proyectos" class="section">
       <div class="section-head">
         <span class="eyebrow"
           style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent); display: block; margin-bottom: 8px;"
-          data-i18n="projects-eyebrow">03
-          — Portafolio de Interfaces</span>
+          data-i18n="projects-eyebrow">03 — Portafolio de Interfaces</span>
         <h2 style="font-size: clamp(2rem, 3vw, 2.8rem); font-family: var(--font-display); font-weight: 400; margin: 0;"
-          data-i18n="projects-title">
-          Proyectos Destacados</h2>
+          data-i18n="projects-title">Proyectos Destacados</h2>
       </div>
 
-      <div class="projects-grid-circles">
+      <div class="projects-grid-modern">
 
-        <!-- Proyecto 1: App NASA APOD (Ahora como primer proyecto por su impacto visual y frontend) -->
-        <div class="project-card-container">
-          <div class="project-card-inner">
-            <!-- Lado Frontal -->
-            <div class="project-face project-front">
-              <span class="project-badge-top" style="color: #fff; background: var(--accent-gradient);"
-                data-i18n="badge-project-2">Frontend UI</span>
-              <h3 data-i18n="project-2-title">Explorador NASA APOD</h3>
-              <p data-i18n="project-2-desc">Interfaz interactiva de consumo de API en tiempo real con diseño espacial
-                inmersivo y filtros de fecha dinámicos.</p>
-              <span class="flip-hint" data-i18n="flip-hint">Girar para ver más ↻</span>
+        <!-- Proyecto 1: App NASA APOD -->
+        <article class="project-card-modern">
+          <div class="project-card-thumb">
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=700&q=80"
+              alt="Explorador NASA APOD" loading="lazy">
+            <span class="project-badge-overlay" data-i18n="badge-project-1">Frontend UI</span>
+          </div>
+          <div class="project-card-body">
+            <h3 data-i18n="project-1-title">Explorador NASA APOD</h3>
+            <p data-i18n="project-1-desc">Interfaz interactiva de consumo de API en tiempo real con diseño espacial
+              inmersivo, filtros dinámicos por fecha y animaciones fluidas.</p>
+            <div class="project-tech-tags">
+              <span class="project-tech-tag">JavaScript ES6+</span>
+              <span class="project-tech-tag">REST API</span>
+              <span class="project-tech-tag">CSS3 Glow</span>
             </div>
-            <!-- Lado Trasero (Imagen y Enlaces) -->
-            <div class="project-face project-back"
-              style="background-image: linear-gradient(rgba(15,15,26,0.85), rgba(15,15,26,0.85)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80');">
-              <span class="project-tag-back" data-i18n="tag-project-2">JavaScript / CSS UI</span>
-              <h4 data-i18n="project-back-title">Vista Previa &amp; Código</h4>
-              <p data-i18n="project-2-back-desc">Estética galáctica con animaciones CSS fluidas y arquitectura visual
-                cuidada.</p>
-              <div class="project-links-back">
-                <a href="https://github.com/tuusuario/nasa-apod" target="_blank" rel="noopener"
-                  onclick="event.stopPropagation();" data-i18n="link-github">GitHub ↗</a>
-                <a href="https://tu-sitio-desplegado.com" target="_blank" rel="noopener"
-                  onclick="event.stopPropagation();"
-                  style="background: var(--surface); border: 1px solid var(--accent); color: var(--accent);"
-                  data-i18n="link-demo">Ver sitio
-                  ↗</a>
-              </div>
+            <div class="project-actions-row">
+              <a href="https://tu-sitio-desplegado.com" target="_blank" rel="noopener noreferrer"
+                class="btn-project-demo" data-i18n="link-demo">Ver Demo ↗</a>
+              <a href="https://github.com/VannessaMatallana" target="_blank" rel="noopener noreferrer"
+                class="btn-project-github" data-i18n="link-github">GitHub ↗</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <!-- Proyecto 2: App Web Interactiva / Dashboard UI -->
-        <div class="project-card-container">
-          <div class="project-card-inner">
-            <!-- Lado Frontal -->
-            <div class="project-face project-front">
-              <span class="project-badge-top" data-i18n="badge-project-1">Dashboard UI</span>
-              <h3 data-i18n="project-1-title">Gestor de Clases &amp; UI</h3>
-              <p data-i18n="project-1-desc">Interfaz administrativa ágil y responsiva para control de horarios con
-                componentes limpios y navegación intuitiva.</p>
-              <span class="flip-hint" data-i18n="flip-hint">Girar para ver más ↻</span>
+        <!-- Proyecto 2: Gestor de Clases & Horarios -->
+        <article class="project-card-modern">
+          <div class="project-card-thumb">
+            <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=700&q=80"
+              alt="Gestor de Clases &amp; Horarios" loading="lazy">
+            <span class="project-badge-overlay" data-i18n="badge-project-2">Dashboard UI</span>
+          </div>
+          <div class="project-card-body">
+            <h3 data-i18n="project-2-title">Gestor de Clases &amp; Horarios</h3>
+            <p data-i18n="project-2-desc">Interfaz administrativa ágil y responsiva para control de horarios con
+              componentes modulares limpios y navegación intuitiva.</p>
+            <div class="project-tech-tags">
+              <span class="project-tech-tag">HTML5 / CSS3</span>
+              <span class="project-tech-tag">JavaScript</span>
+              <span class="project-tech-tag">Responsive UI</span>
             </div>
-            <!-- Lado Trasero (Imagen y Enlaces) -->
-            <div class="project-face project-back"
-              style="background-image: linear-gradient(rgba(15,15,26,0.85), rgba(15,15,26,0.85)), url('https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=600&q=80');">
-              <span class="project-tag-back" data-i18n="tag-project-1">HTML / CSS / JS</span>
-              <h4 data-i18n="project-back-title">Vista Previa &amp; Código</h4>
-              <p data-i18n="project-1-back-desc">Enfoque absoluto en experiencia de usuario y diseño modular
-                reutilizable.</p>
-              <div class="project-links-back">
-                <a href="https://github.com/tuusuario/gestor-ui" target="_blank" rel="noopener"
-                  onclick="event.stopPropagation();" data-i18n="link-github">GitHub ↗</a>
-              </div>
+            <div class="project-actions-row">
+              <a href="https://tu-sitio-desplegado.com" target="_blank" rel="noopener noreferrer"
+                class="btn-project-demo" data-i18n="link-demo">Ver Demo ↗</a>
+              <a href="https://github.com/VannessaMatallana" target="_blank" rel="noopener noreferrer"
+                class="btn-project-github" data-i18n="link-github">GitHub ↗</a>
             </div>
           </div>
-        </div>
+        </article>
 
-        <!-- Proyecto 3: API Cafetería / Backend Integrado -->
-        <div class="project-card-container">
-          <div class="project-card-inner">
-            <!-- Lado Frontal -->
-            <div class="project-face project-front">
-              <span class="project-badge-top" data-i18n="badge-project-3">Fullstack Core</span>
-              <h3 data-i18n="project-3-title">API &amp; Sistema Cafetería</h3>
-              <p data-i18n="project-3-desc">Arquitectura backend con Spring Boot conectada a una experiencia visual
-                limpia y estructurada para gestión de stock.</p>
-              <span class="flip-hint" data-i18n="flip-hint">Girar para ver más ↻</span>
+        <!-- Proyecto 3: API & Sistema Cafetería -->
+        <article class="project-card-modern">
+          <div class="project-card-thumb">
+            <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=700&q=80"
+              alt="API &amp; Sistema Cafetería" loading="lazy">
+            <span class="project-badge-overlay" data-i18n="badge-project-3">Fullstack Core</span>
+          </div>
+          <div class="project-card-body">
+            <h3 data-i18n="project-3-title">API &amp; Sistema Cafetería</h3>
+            <p data-i18n="project-3-desc">Arquitectura backend robusta en Java y Spring Boot conectada a una experiencia
+              visual estructurada para gestión de productos y stock.</p>
+            <div class="project-tech-tags">
+              <span class="project-tech-tag">Java SE</span>
+              <span class="project-tech-tag">Spring Boot</span>
+              <span class="project-tech-tag">SQL</span>
             </div>
-            <!-- Lado Trasero (Imagen y Enlaces) -->
-            <div class="project-face project-back"
-              style="background-image: linear-gradient(rgba(15,15,26,0.85), rgba(15,15,26,0.85)), url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=600&q=80');">
-              <span class="project-tag-back" data-i18n="tag-project-3">Spring Boot / Java</span>
-              <h4 data-i18n="project-back-title">Vista Previa &amp; Código</h4>
-              <p data-i18n="project-3-back-desc">Soporte lógico robusto combinando servicios backend y diseño funcional.
-              </p>
-              <div class="project-links-back">
-                <a href="https://github.com/tuusuario/api-cafeteria" target="_blank" rel="noopener"
-                  onclick="event.stopPropagation();" data-i18n="link-github">GitHub ↗</a>
-              </div>
+            <div class="project-actions-row">
+              <a href="https://tu-sitio-desplegado.com" target="_blank" rel="noopener noreferrer"
+                class="btn-project-demo" data-i18n="link-demo">Ver Demo ↗</a>
+              <a href="https://github.com/VannessaMatallana" target="_blank" rel="noopener noreferrer"
+                class="btn-project-github" data-i18n="link-github">GitHub ↗</a>
             </div>
           </div>
-        </div>
+        </article>
 
       </div>
     </section>
 
     <!-- ==========================================
-         6. ESTUDIOS (LÍNEA DE TIEMPO HORIZONTAL)
+         6. TRAYECTORIA Y CURRÍCULUM (LÍNEA DE TIEMPO)
          ========================================== -->
-    <section id="estudios" class="section section-alt">
+    <section id="curriculum" class="section section-alt">
       <div class="section-head">
         <span class="eyebrow"
           style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent); display: block; margin-bottom: 8px;"
-          data-i18n="studies-eyebrow">04
-          — Formación y trayectoria</span>
+          data-i18n="cv-eyebrow">04 — Trayectoria &amp; Experiencia</span>
         <h2 style="font-size: clamp(2rem, 3vw, 2.8rem); font-family: var(--font-display); font-weight: 400; margin: 0;"
-          data-i18n="studies-title">
-          Estudios</h2>
+          data-i18n="cv-title">Currículum</h2>
       </div>
 
-      <div class="timeline-horizontal-wrapper">
-        <div class="timeline-track-line"></div>
+      <div class="cv-timeline-wrapper">
 
-        <div class="studies-timeline-grid">
-
-          <div class="study-timeline-item">
-            <div class="timeline-node"></div>
-            <div class="study-box circle-accent-corner">
-              <div class="study-date" data-i18n="study-1-date">Pregrado Profesional</div>
-              <h3 data-i18n="study-1-title">Psicología &amp; Percepción</h3>
-              <span class="study-institution" data-i18n="study-1-inst">Formación Académica</span>
-              <p data-i18n="study-1-desc">Bases profundas en el comportamiento humano aplicadas directamente al diseño
-                de interfaces intuitivas y experiencia de usuario (UX).</p>
+        <div class="timeline-exp-item">
+          <div class="timeline-exp-dot"></div>
+          <div class="timeline-exp-card">
+            <div class="timeline-exp-header">
+              <h3 class="timeline-exp-role" data-i18n="cv-exp1-role">Desarrolladora Frontend &amp; Full Stack Junior</h3>
+              <span class="timeline-exp-date" data-i18n="cv-exp1-date">2024 — Presente</span>
             </div>
+            <span class="timeline-exp-company" data-i18n="cv-exp1-company">Generation Colombia</span>
+            <p class="timeline-exp-desc" data-i18n="cv-exp1-desc">
+              Construcción de interfaces responsivas y accesibles con JavaScript y CSS moderno. Integración con servicios
+              RESTful en Java/Spring Boot y trabajo colaborativo bajo Scrum.
+            </p>
           </div>
+        </div>
 
-          <div class="study-timeline-item">
-            <div class="timeline-node"></div>
-            <div class="study-box circle-accent-corner">
-              <div class="study-date" data-i18n="study-2-date">Bootcamp Intensivo</div>
-              <h3 data-i18n="study-2-title">Desarrollo Full Stack</h3>
-              <span class="study-institution" data-i18n="study-2-inst">Generation Colombia</span>
-              <p data-i18n="study-2-desc">Especialización técnica combinando desarrollo frontend avanzado y cimentación
-                lógica con Java y Spring Boot.</p>
+        <div class="timeline-exp-item">
+          <div class="timeline-exp-dot"></div>
+          <div class="timeline-exp-card">
+            <div class="timeline-exp-header">
+              <h3 class="timeline-exp-role" data-i18n="cv-exp2-role">Consultora UX &amp; Psicóloga</h3>
+              <span class="timeline-exp-date" data-i18n="cv-exp2-date">2022 — 2024</span>
             </div>
+            <span class="timeline-exp-company" data-i18n="cv-exp2-company">Consultoría Profesional</span>
+            <p class="timeline-exp-desc" data-i18n="cv-exp2-desc">
+              Aplicación de principios cognitivos y análisis del comportamiento humano al diseño de interfaces intuitivas,
+              arquitectura de información y usabilidad digital centrada en las personas.
+            </p>
           </div>
-
-          <div class="study-timeline-item">
-            <div class="timeline-node"></div>
-            <div class="study-box highlight circle-accent-corner">
-              <div class="study-date" data-i18n="study-3-date">Tecnólogo (En curso)</div>
-              <h3 data-i18n="study-3-title">Análisis y Desarrollo de Software</h3>
-              <span class="study-institution" data-i18n="study-3-inst">SENA</span>
-              <p data-i18n="study-3-desc">Consolidación de competencias en arquitectura web, patrones de diseño y
-                estándares profesionales de ingeniería.</p>
-            </div>
-          </div>
-
         </div>
-      </div>
-    </section>
 
-    <!-- ==========================================
-         7. CURRÍCULUM Y MODAL DE SERVICIOS
-         ========================================== -->
-    <section id="curriculum" class="section">
-      <div class="section-head">
-        <span class="eyebrow"
-          style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent); display: block; margin-bottom: 8px;"
-          data-i18n="cv-eyebrow">05
-          — Trayectoria &amp; Diseño</span>
-        <h2 style="font-size: clamp(2rem, 3vw, 2.8rem); font-family: var(--font-display); font-weight: 400; margin: 0;"
-          data-i18n="cv-title">
-          Currículum</h2>
-      </div>
-
-      <div class="cv-grid">
-        <div class="cv-block">
-          <h3 data-i18n="cv-exp-title">Experiencia Profesional</h3>
-          <p data-i18n="cv-exp-desc">
-            Enfoque integral fusionando la sensibilidad visual de la psicología con la arquitectura técnica,
-            construyendo interfaces de usuario (UI/UX) centradas en las personas y sistemas web eficientes.
-          </p>
-        </div>
-        <div class="cv-block">
-          <h3 data-i18n="cv-skills-title">Logros y Habilidades</h3>
-          <p data-i18n="cv-skills-desc">
-            Formación full-stack certificada (Generation Colombia) con dominio avanzado en HTML, CSS, JavaScript y
-            cimentación lógica en Java/Spring Boot, orientada al desarrollo limpio y responsivo.
-          </p>
-        </div>
       </div>
 
       <div class="cv-bottom-actions">
         <a href="./CV/CV-Generation-Deisy Vanessa Matallana Bernal (1).docx.pdf"
-          download="./CV/CV-Generation-Deisy Vanessa Matallana Bernal (1).docx.pdf" class="btn btn-ghost"
-          data-i18n="btn-download-cv">Descargar CV en PDF</a>
-        <button id="open-services-modal" class="btn"
-          style="background: var(--accent); color: var(--bg); border: none; cursor: pointer;"
-          data-i18n="btn-view-services">Ver Capacidades ↗</button>
+          download="./CV/CV-Generation-Deisy Vanessa Matallana Bernal (1).docx.pdf" target="_blank"
+          rel="noopener noreferrer" class="btn btn-primary" data-i18n="btn-download-cv">Descargar CV en PDF</a>
       </div>
     </section>
 
-    <div id="services-modal" class="modal-overlay">
-      <div class="modal-content">
-        <button id="close-services-modal" class="modal-close">&times;</button>
-        <h3 class="modal-title" data-i18n="services-modal-title">Capacidades y Servicios</h3>
-
-        <div class="services-circle-grid">
-          <div class="service-circle highlight-service">
-            <h4 data-i18n="service-1-title">Diseño Frontend &amp; UI</h4>
-            <p data-i18n="service-1-desc">Interfaces web modernas, interactivas y estéticamente cuidadas.</p>
-          </div>
-          <div class="service-circle">
-            <h4 data-i18n="service-2-title">Consultoría UX</h4>
-            <p data-i18n="service-2-desc">Enfoque centrado en la experiencia de usuario y percepción visual.</p>
-          </div>
-          <div class="service-circle">
-            <h4 data-i18n="service-3-title">Desarrollo Web Ágil</h4>
-            <p data-i18n="service-3-desc">Maquetación responsiva con JavaScript, HTML5 y CSS avanzado.</p>
-          </div>
-          <div class="service-circle">
-            <h4 data-i18n="service-4-title">Sistemas Backend</h4>
-            <p data-i18n="service-4-desc">APIs robustas y lógica conectada en Java y Spring Boot.</p>
-          </div>
-          <div class="service-circle">
-            <h4 data-i18n="service-5-title">Control &amp; Git</h4>
-            <p data-i18n="service-5-desc">Versionado limpio y trabajo colaborativo estructurado.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- ==========================================
-         8. CONTACTO Y FORMULARIO (ACTUALIZADO)
+         7. CONTACTO Y FORMULARIO
          ========================================== -->
-    <section id="contacto" class="section section-alt">
+    <section id="contacto" class="section">
       <div class="section-head">
         <span class="eyebrow"
           style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent); display: block; margin-bottom: 8px;"
-          data-i18n="contact-eyebrow">06
-          — Conectemos</span>
+          data-i18n="contact-eyebrow">05 — Conectemos</span>
         <h2 style="font-size: clamp(2rem, 3vw, 2.8rem); font-family: var(--font-display); font-weight: 400; margin: 0;"
-          data-i18n="contact-title">
-          Iniciemos una charla</h2>
+          data-i18n="contact-title">Iniciemos una charla</h2>
       </div>
 
       <div class="contact-card-wrapper">
         <div class="contact-main-card circle-accent-corner">
 
           <div class="contact-info-panel">
-            <div class="status-badge-contact" aria-label="Disponibilidad laboral">
-              <span class="status-dot"></span>
-              <span class="status-text" data-i18n="status-availability">Disponible para proyectos Frontend &amp;
-                UI</span>
+            <div>
+              <div class="status-badge-contact" aria-label="Disponibilidad laboral">
+                <span class="status-dot"></span>
+                <span class="status-text" data-i18n="status-availability">Disponible para proyectos Frontend &amp; UI</span>
+              </div>
+
+              <h3 data-i18n="contact-subtitle">¿Hablamos de un proyecto o reto visual?</h3>
+              <p data-i18n="contact-desc">Abierta a nuevas oportunidades en desarrollo frontend, diseño de interfaces o
+                proyectos digitales creativos. Escríbeme:</p>
             </div>
 
-            <h3 data-i18n="contact-subtitle">¿Hablamos de un proyecto o reto visual?</h3>
-            <p data-i18n="contact-desc">Abierta a nuevas oportunidades en desarrollo frontend, diseño de interfaces o
-              proyectos digitales creativos. Escríbeme:</p>
-
             <div class="contact-channels">
-              <a href="mailto:vanessa.matallana@ejemplo.com" class="channel-item">
+              <a href="mailto:d.vanessamatallana.b@gmail.com" class="channel-item">
                 <span class="channel-icon">✉</span>
                 <div class="channel-data">
                   <span class="channel-label" data-i18n="channel-email-label">Correo electrónico</span>
@@ -784,32 +689,30 @@
   </main>
 
   <!-- ==========================================
-     9. PIE DE PÁGINA (FOOTER)
+     8. PIE DE PÁGINA (FOOTER)
      ========================================== -->
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-brand">
-        <img src="Imagenes/LOGOvm.png" alt="Logo de Vanessa Matallana" class="logo-img">
-        <div class="nav-logo" aria-label="Logo de Vanessa Matallana">
-        </div>
-
+        <img src="Imagenes/LOGOvm.png" alt="Logotipo de Vanessa Matallana" class="logo-img" data-i18n-attr="alt" data-i18n="alt-logo">
         <p data-i18n="footer-name">Deisy Vanessa Matallana Bernal<br><span data-i18n="footer-title">Desarrolladora de
             Software · Psicóloga</span></p>
       </div>
 
       <nav class="footer-nav" aria-label="Enlaces del pie de página">
         <a href="#sobre-mi" data-i18n="nav-about">Sobre mí</a>
+        <a href="#herramientas" data-i18n="nav-stack">Stack</a>
         <a href="#proyectos" data-i18n="nav-projects">Proyectos</a>
-        <a href="#curriculum" data-i18n="nav-cv">Currículum</a>
+        <a href="#curriculum" data-i18n="nav-resume">Currículum</a>
         <a href="#contacto" data-i18n="nav-contact">Contacto</a>
       </nav>
 
       <div class="footer-social">
         <a href="https://github.com/VannessaMatallana" target="_blank" rel="noopener noreferrer"
           data-i18n="social-github">GitHub</a>
-        <a href="http://www.linkedin.com/in/deisy-vanessa-matallana-bernal" target="_blank" rel="noopener noreferrer"
+        <a href="https://www.linkedin.com/in/deisy-vanessa-matallana-bernal/" target="_blank" rel="noopener noreferrer"
           data-i18n="social-linkedin">LinkedIn</a>
-        <a href="mailto:tuemail@ejemplo.com" data-i18n="social-email">Email</a>
+        <a href="mailto:d.vanessamatallana.b@gmail.com" data-i18n="social-email">Correo</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -818,11 +721,9 @@
     </div>
   </footer>
 
+  <script src="JS/translations.js"></script>
   <script src="JS/script.js"></script>
   <script src="JS/app.js"></script>
-  <script src="https://unpkg.com/i18next@23.11.5/i18next.min.js"></script>
-  <script type="text/javascript"
-    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 
 </html>

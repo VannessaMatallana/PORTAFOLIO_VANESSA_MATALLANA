@@ -1,11 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     /* ==========================================================================
-       1. SECTOR DE TEMA (MODO OSCURO / CLARO)
+       1. SECTOR DE TEMA (MODO OSCURO BASE / CLARO)
        ========================================================================== */
     const themeToggle = document.getElementById('theme-toggle');
     const rootElement = document.documentElement;
 
+    // Modo oscuro como base por defecto
     const currentTheme = localStorage.getItem('theme') || 'dark';
     
     if (currentTheme === 'light') {
@@ -33,31 +34,30 @@ document.addEventListener('DOMContentLoaded', () => {
     const navToggle = document.getElementById('nav-toggle');
     const navMenu = document.getElementById('nav-menu');
 
-if (navToggle && navMenu) {
-    navToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-      
-      navToggle.classList.toggle('active');
-    });
+    if (navToggle && navMenu) {
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
 
-    document.querySelectorAll('.nav-menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        navToggle.classList.remove('active');
-      });
-    });
-  }
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                navToggle.classList.remove('active');
+            });
+        });
+    }
 
     /* ==========================================================================
-       3. NAVEGACIÓN
+       3. NAVEGACIÓN SUAVE
        ========================================================================== */
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
             const targetId = this.getAttribute('href');
             if (targetId && targetId !== '#') {
                 const target = document.querySelector(targetId);
                 if (target) {
+                    e.preventDefault();
                     target.scrollIntoView({
                         behavior: 'smooth',
                         block: 'start'
@@ -68,7 +68,7 @@ if (navToggle && navMenu) {
     });
 
     /* ==========================================================================
-       5. CONTROLADOR DE MENÚS DESPLEGABLES (NAVBAR)
+       4. CONTROLADOR DE MENÚS DESPLEGABLES (NAVBAR)
        ========================================================================== */
     document.addEventListener("click", (e) => {
         const dropdownToggle = e.target.closest(".dropdown-toggle-btn");
@@ -84,35 +84,8 @@ if (navToggle && navMenu) {
         });
     });
 
-
     /* ==========================================================================
-       6. EFECTO TILT 3D EN TARJETAS DE PROYECTO
-       ========================================================================== */
-    const cards = document.querySelectorAll('.project-card');
-
-    cards.forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            
-            const rotateX = ((y - centerY) / centerY) * -8;
-            const rotateY = ((x - centerX) / centerX) * 8;
-
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px)`;
-        });
-
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
-        });
-    });
-
-
-    /* ==========================================================================
-       7. INTERSECTION OBSERVER (ANIMACIONES AL HACER SCROLL)
+       5. INTERSECTION OBSERVER (ANIMACIONES AL HACER SCROLL)
        ========================================================================== */
     const observerOptions = {
         threshold: 0.1,
@@ -129,40 +102,94 @@ if (navToggle && navMenu) {
         });
     }, observerOptions);
 
-    document.querySelectorAll('.organic-card, .project-card, .service-row').forEach(el => {
+    document.querySelectorAll('.project-card-modern, .tool-glow-card, .about-main-card, .about-card-glow, .timeline-exp-card').forEach(el => {
         el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        el.style.transform = 'translateY(25px)';
+        el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
         observer.observe(el);
     });
 
+    /* ==========================================================================
+       6. FILTRADO INTERACTIVO - STACK TECNOLÓGICO
+       ========================================================================== */
+    const filterBtns = document.querySelectorAll(".filter-btn");
+    const toolCards = document.querySelectorAll(".tools-grid-modern .tool-glow-card");
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            filterBtns.forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+
+            const filterValue = btn.getAttribute("data-filter");
+
+            toolCards.forEach(card => {
+                const category = card.getAttribute("data-category");
+
+                if (filterValue === "all" || category === filterValue) {
+                    card.classList.remove("hidden");
+                } else {
+                    card.classList.add("hidden");
+                }
+            });
+        });
+    });
+
+    /* ==========================================================================
+       7. CONTROLADOR DE FORMULARIO DE CONTACTO
+       ========================================================================== */
+    const contactForm = document.getElementById("contact-form");
+
+    if (contactForm) {
+        contactForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            const submitBtn = contactForm.querySelector("button[type='submit']");
+            const originalText = submitBtn.innerHTML;
+            
+            const successText = (typeof i18next !== 'undefined') 
+                ? i18next.t('form-success-msg') 
+                : "¡Mensaje enviado con éxito! ✓";
+
+            submitBtn.innerHTML = successText;
+            submitBtn.style.background = "var(--accent)";
+            submitBtn.style.color = "var(--bg)";
+
+            contactForm.reset();
+            setTimeout(() => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.style.background = "";
+                submitBtn.style.color = "";
+            }, 4000);
+        });
+    }
+
 });
 
-
 /* ==========================================================================
-   8. CONTROL DE VENTANAS MODALES ("SOBRE MÍ")
+   8. CONTROL DE VENTANAS MODALES ("SOBRE MÍ") CON SOPORTE I18N
    ========================================================================== */
-
 function openModal(modalId) {
     const backdrop = document.getElementById('about-modal-backdrop');
     const modalBody = document.getElementById('modal-body-content');
     
+    const t = (key, fallback) => (typeof i18next !== 'undefined' && i18next.exists(key)) ? i18next.t(key) : fallback;
+
     const contentData = {
         'modal-main': `
-            <h2 style="color: var(--accent); margin-bottom: 16px; font-family: var(--font-display);">Identidad Profesional</h2>
-            <p style="color: var(--text-muted); line-height: 1.7; font-size: 0.95rem;">Mi perfil une la sensibilidad estética y el diseño web con la psicología analítica. Como desarrolladora frontend formada en <strong>Generation Colombia</strong>, creo interfaces atractivas donde cada detalle visual y cada interacción tienen un propósito humano claro.</p>
+            <h2 style="color: var(--accent); margin-bottom: 16px; font-family: var(--font-display); font-size: 1.45rem;">${t('modal-main-title', 'Identidad Profesional: Psicología & Desarrollo Frontend')}</h2>
+            <div style="color: var(--text-muted); line-height: 1.75; font-size: 0.96rem;">${t('modal-main-desc', '<p>Mi perfil profesional une la sensibilidad estética y el diseño web con la psicología analítica.</p>')}</div>
         `,
         'modal-psico': `
-            <h2 style="color: var(--accent); margin-bottom: 16px; font-family: var(--font-display);">Psicología & UX</h2>
-            <p style="color: var(--text-muted); line-height: 1.7; font-size: 0.95rem;">Aplicación directa del comportamiento humano y la percepción visual al diseño de experiencias digitales fluidas, intuitivas y centradas en el usuario.</p>
+            <h2 style="color: var(--accent); margin-bottom: 16px; font-family: var(--font-display); font-size: 1.45rem;">${t('modal-psico-title', 'Psicología Aplicada & Experiencia de Usuario (UX)')}</h2>
+            <div style="color: var(--text-muted); line-height: 1.75; font-size: 0.96rem;">${t('modal-psico-desc', '<p>Aplicación directa del comportamiento humano y la percepción visual al diseño de experiencias digitales fluidas, intuitivas y centradas en el usuario.</p>')}</div>
         `,
         'modal-frontend': `
-            <h2 style="color: var(--accent); margin-bottom: 16px; font-family: var(--font-display);">Frontend & UI</h2>
-            <p style="color: var(--text-muted); line-height: 1.7; font-size: 0.95rem;">Creación de componentes estilizados, animaciones sutiles, maquetación con CSS moderno y desarrollo de interactividad fluida con JavaScript.</p>
+            <h2 style="color: var(--accent); margin-bottom: 16px; font-family: var(--font-display); font-size: 1.45rem;">${t('modal-frontend-title', 'Desarrollo Frontend & Diseño de Interacción (UI)')}</h2>
+            <div style="color: var(--text-muted); line-height: 1.75; font-size: 0.96rem;">${t('modal-frontend-desc', '<p>Creación de componentes estilizados, animaciones sutiles, maquetación con CSS moderno y desarrollo de interactividad fluida con JavaScript.</p>')}</div>
         `,
         'modal-backend': `
-            <h2 style="color: var(--accent); margin-bottom: 16px; font-family: var(--font-display);">Visión Integral & Backend</h2>
-            <p style="color: var(--text-muted); line-height: 1.7; font-size: 0.95rem;">Conexión limpia con servicios backend, cimentación lógica y estructuras sólidas (como Java y Spring Boot) que operan eficientemente detrás de la interfaz.</p>
+            <h2 style="color: var(--accent); margin-bottom: 16px; font-family: var(--font-display); font-size: 1.45rem;">${t('modal-backend-title', 'Visión Integral & Conexión con el Backend')}</h2>
+            <div style="color: var(--text-muted); line-height: 1.75; font-size: 0.96rem;">${t('modal-backend-desc', '<p>Conexión limpia con servicios backend, cimentación lógica y estructuras sólidas que operan eficientemente detrás de la interfaz.</p>')}</div>
         `
     };
 
@@ -186,108 +213,4 @@ document.addEventListener('keydown', function(event) {
     if (event.key === 'Escape') {
         closeModal();
     }
-});
-
-/* ==========================================================================
-   9. FILTRADO INTERACTIVO - STACK TECNOLÓGICO
-   ========================================================================== */
-document.addEventListener("DOMContentLoaded", () => {
-  const filterBtns = document.querySelectorAll(".filter-btn");
-  const toolCards = document.querySelectorAll(".tools-grid-modern .tool-glow-card");
-
-  filterBtns.forEach(btn => {
-    btn.addEventListener("click", () => {
-      filterBtns.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-
-      const filterValue = btn.getAttribute("data-filter");
-
-      toolCards.forEach(card => {
-        const category = card.getAttribute("data-category");
-
-        if (filterValue === "all" || category === filterValue) {
-          card.classList.remove("hidden");
-        } else {
-          card.classList.add("hidden");
-        }
-      });
-    });
-  });
-});
-
-
-/* ==========================================================================
-   10. EFECTO FLIP 3D - PROYECTOS CIRCULARES
-   ========================================================================== */
-document.addEventListener("DOMContentLoaded", () => {
-  const projectCards = document.querySelectorAll(".project-card-container");
-
-  projectCards.forEach(card => {
-    card.addEventListener("click", () => {
-      card.classList.toggle("flipped");
-    });
-  });
-});
-
-
-/* ==========================================================================
-   11. MODAL DE SERVICIOS
-   ========================================================================== */
-document.addEventListener("DOMContentLoaded", () => {
-  const openModalBtn = document.getElementById("open-services-modal");
-  const closeModalBtn = document.getElementById("close-services-modal");
-  const modalOverlay = document.getElementById("services-modal");
-
-  if (openModalBtn && closeModalBtn && modalOverlay) {
-    openModalBtn.addEventListener("click", () => {
-      modalOverlay.classList.add("active");
-    });
-
-    closeModalBtn.addEventListener("click", () => {
-      modalOverlay.classList.remove("active");
-    });
-
-    modalOverlay.addEventListener("click", (e) => {
-      if (e.target === modalOverlay) {
-        modalOverlay.classList.remove("active");
-      }
-    });
-  }
-});
-
-
-/* ==========================================================================
-   12. CONTROLADOR DE FORMULARIO DE CONTACTO
-   ========================================================================== */
-document.addEventListener("DOMContentLoaded", () => {
-  const contactForm = document.getElementById("contact-form");
-
-  if (contactForm) {
-    contactForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-
-      const formData = {
-        name: document.getElementById("name").value,
-        email: document.getElementById("email").value,
-        subject: document.getElementById("subject").value,
-        message: document.getElementById("message").value
-      };
-
-      console.log("Datos del formulario listos para enviar:", formData);
-
-      const submitBtn = contactForm.querySelector("button[type='submit']");
-      const originalText = submitBtn.innerHTML;
-      
-      submitBtn.innerHTML = "¡Mensaje enviado con éxito! ✓";
-      submitBtn.style.background = "var(--accent)";
-      submitBtn.style.color = "var(--bg)";
-
-      contactForm.reset();
-      setTimeout(() => {
-        submitBtn.innerHTML = originalText;
-        submitBtn.style.background = "";
-        submitBtn.style.color = "";
-      }, 4000);
-    });
-  }
 });
